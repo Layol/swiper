@@ -7,12 +7,7 @@ export class TouchDiy {
             //触发的滑动距离
             distance: 30,
             //swipe触发方式touchmove|touchend
-            trigger: 'move',
-            //上下左右滑回调
-            swipeLeft(e) { },
-            swipeRight(e) { },
-            swipeUp(e) { },
-            swipeDown(e) { }
+            trigger: 'move'
         }
         this.opt = Object.assign(defaultOpt, opt)
         this.el = el
@@ -33,7 +28,7 @@ export class TouchDiy {
         const evts = this.opt.events
         for (let i = 0; i < evts.length; i++) {
             this.evts[evts[i]] = new Event(evts[i], { "bubbles": true, "cancelable": true })
-            this.el.addEventListener(evts[i], this.opt[evts[i]])
+            // this.el.addEventListener(evts[i], this.opt[evts[i]])
         }
     }
     //绑定事件
